@@ -8,7 +8,7 @@ using namespace std;
 using namespace sf;
 
 // `constexpr` defines an immutable compile-time value.
-constexpr int windowWidth{800}, windowHeight{600};
+constexpr unsigned int windowWidth{800}, windowHeight{600};
 
 int main()
 {

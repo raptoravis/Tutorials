@@ -13,7 +13,7 @@ using namespace sf;
 // we just defined an alias for `float`, called `FrameTime`
 using FrameTime = float;
 
-constexpr int windowWidth{800}, windowHeight{600};
+constexpr unsigned int windowWidth{800}, windowHeight{600};
 constexpr float ballRadius{10.f}, ballVelocity{8.f};
 constexpr float paddleWidth{60.f}, paddleHeight{20.f}, paddleVelocity{6.f};
 constexpr float blockWidth{60.f}, blockHeight{20.f};

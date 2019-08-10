@@ -13,7 +13,7 @@ using FrameTime = float;
 
 // We will need to make the velocity constants a lot smaller
 // to deal with the new frametime values
-constexpr int windowWidth{800}, windowHeight{600};
+constexpr unsigned int windowWidth{800}, windowHeight{600};
 constexpr float ballRadius{10.f}, ballVelocity{0.8f};
 constexpr float paddleWidth{60.f}, paddleHeight{20.f}, paddleVelocity{0.6f};
 constexpr float blockWidth{60.f}, blockHeight{20.f};

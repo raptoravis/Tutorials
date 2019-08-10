@@ -7,7 +7,7 @@
 using namespace std;
 using namespace sf;
 
-constexpr int windowWidth{800}, windowHeight{600};
+constexpr unsigned int windowWidth{800}, windowHeight{600};
 
 // Let's create some constants for the Ball class.
 constexpr float ballRadius{10.f}, ballVelocity{8.f};

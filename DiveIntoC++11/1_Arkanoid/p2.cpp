@@ -7,7 +7,7 @@
 using namespace std;
 using namespace sf;
 
-constexpr int windowWidth{800}, windowHeight{600};
+constexpr unsigned int windowWidth{800}, windowHeight{600};
 constexpr float ballRadius{10.f};
 
 // Let's create a class for our Ball.

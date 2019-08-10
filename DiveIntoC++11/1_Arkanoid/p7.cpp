@@ -7,7 +7,7 @@
 using namespace std;
 using namespace sf;
 
-constexpr int windowWidth{800}, windowHeight{600};
+constexpr unsigned int windowWidth{800}, windowHeight{600};
 constexpr float ballRadius{10.f}, ballVelocity{8.f};
 constexpr float paddleWidth{60.f}, paddleHeight{20.f}, paddleVelocity{6.f};
 

@@ -203,7 +203,7 @@ namespace CompositionArkanoid
     using namespace sf;
     using FrameTime = float;
 
-    constexpr int windowWidth{800}, windowHeight{600};
+    constexpr unsigned int windowWidth{800}, windowHeight{600};
     constexpr float ballRadius{10.f}, ballVelocity{0.8f};
     constexpr float paddleWidth{60.f}, paddleHeight{20.f}, paddleVelocity{0.6f};
     constexpr float blockWidth{60.f}, blockHeight{20.f};

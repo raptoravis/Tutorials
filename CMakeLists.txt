@@ -15,11 +15,9 @@ find_package(Boost 1.60.0 COMPONENTS thread)
 
 include_directories(${Boost_INCLUDE_DIRS})
 
-#add_executable(test "${CMAKE_SOURCE_DIR}/DiveIntoC++11/1_Arkanoid/p1.cpp")
-#target_link_libraries(test ${SFML_LIBRARIES})
-
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
+################################################################################
+################################################################################
 FUNCTION(SUBDIRLIST result curdir)
   FILE(GLOB children RELATIVE ${curdir} ${curdir}/*)
   SET(dirlist "")
@@ -31,39 +29,36 @@ FUNCTION(SUBDIRLIST result curdir)
   SET(${result} ${dirlist} PARENT_SCOPE)
 ENDFUNCTION()
 
-#SUBDIRLIST(SUBDIRS "${CMAKE_SOURCE_DIR}/DiveIntoC++14") 
-
-#file(GLOB CPP_SOURCES "${CMAKE_SOURCE_DIR}/DiveIntoC++11/1_Arkanoid/*.cpp")
-
 FUNCTION(ADDTARGETS TARGET_FOLDER curdir)
 	get_filename_component(DIR_XXX ${curdir} NAME)
 
 	file(GLOB CPP_SOURCES "${curdir}/*.cpp")
 
-	foreach(MAIN_FILE ${CPP_SOURCES})
+	FOREACH(MAIN_FILE ${CPP_SOURCES})
 		get_filename_component(NAME_XXX ${MAIN_FILE} NAME_WE)
 		set (NAME_XXX "${DIR_XXX}_${NAME_XXX}")
 
 		add_executable(${NAME_XXX} ${MAIN_FILE})
 		target_link_libraries(${NAME_XXX} ${SFML_LIBRARIES})
-		set_property(TARGET ${NAME_XXX} PROPERTY FOLDER "${TARGET_FOLDER}")
+		set_property(TARGET ${NAME_XXX} PROPERTY FOLDER "${TARGET_FOLDER}/${DIR_XXX}")
 
 		#set_property(TARGET ${NAME_XXX} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/bin/${CMAKE_BUILD_TYPE}")
 		#set_property(TARGET ${NAME_XXX} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/bin/$<CONFIG>")
 		#set_property(TARGET ${NAME_XXX} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/code")
-	endforeach(MAIN_FILE)
+	ENDFOREACH(MAIN_FILE)
 
 ENDFUNCTION()
 
 MACRO(HANDLETOPDIR TARGET_FOLDER)
 	SUBDIRLIST(SUBDIRS "${CMAKE_SOURCE_DIR}/${TARGET_FOLDER}")
 
-	foreach(SUBDIR ${SUBDIRS})
+	FOREACH(SUBDIR ${SUBDIRS})
 		#message(${SUBDIR})
 		ADDTARGETS("${TARGET_FOLDER}" "${CMAKE_SOURCE_DIR}/${TARGET_FOLDER}/${SUBDIR}")
-	endforeach(SUBDIR)
+	ENDFOREACH(SUBDIR)
 ENDMACRO()
 
 HANDLETOPDIR("DiveIntoC++11")
+
 HANDLETOPDIR("DiveIntoC++14")
 

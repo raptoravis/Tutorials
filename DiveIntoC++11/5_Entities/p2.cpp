@@ -21,21 +21,24 @@
 
 namespace InheritanceArkanoid
 {
-    // Before defining the game element classes, we need
-    // to define the `GameElement` base class.
+	// Before defining the game element classes, we need
+	// to define the `GameElement` base class.
 
-    // What are the common features of the game elements?
-    // The `update` and `draw` methods. We will declare them
-    // as `virtual`, so that C++ runtime polymorphism may take
-    // place.
+	// What are the common features of the game elements?
+	// The `update` and `draw` methods. We will declare them
+	// as `virtual`, so that C++ runtime polymorphism may take
+	// place.
 
-    struct GameElement
-    {
-        virtual void update(float mFT) {}
-        virtual void draw() {}
-        virtual ~GameElement() {}
-    };
+	struct GameElement
+	{
+		virtual void update(float mFT) {}
+		virtual void draw() {}
+		virtual ~GameElement() {}
+	};
 
+}
+
+int main() {}
 // The `virtual` keyword is fundamental. Without it, runtime
 // polymorphism won't take place.
 

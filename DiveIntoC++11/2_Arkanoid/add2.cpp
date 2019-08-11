@@ -58,7 +58,7 @@ struct Vector2
 
 // These two functions are equivalent.
 // By using {...} syntax we can avoid repeating Vector2.
-Vector2 getMyVector1() { return Vector2(5.f, 5.f); }
+Vector2 getMyVector1() { return Vector2{5.f, 5.f}; }
 Vector2 getMyVector2() { return {5.f, 5.f}; }
 
 // IMPORTANT NOTE:
@@ -68,5 +68,5 @@ Vector2 getMyVector2() { return {5.f, 5.f}; }
 // always use the `(...)` initialization syntax.
 
 auto x = 5; // (fine, x is an `int`)
-auto x(5);  // (fine, x is an `int`)
-auto x{5};  // (misleading, x is an `std::initializer_list<int>`)
+auto x1(5);  // (fine, x is an `int`)
+auto x2{5};  // (misleading, x is an `std::initializer_list<int>`)

@@ -81,6 +81,8 @@ namespace InheritanceArkanoid
     // will be much easier with a single container.
 }
 
+int main() {}
+
 // This approach, however, has a big drawback: this kind
 // of design ("inheritance") does not allow "composition".
 

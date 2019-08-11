@@ -104,4 +104,5 @@ namespace VeryNaiveArkanoid
     // for small games with a small number of game element types.
 }
 
+int main() {}
 // Let's move on, and check out a (possibly) better implementation.

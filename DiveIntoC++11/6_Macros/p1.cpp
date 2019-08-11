@@ -93,4 +93,6 @@ namespace VeryNaiveArkanoid
     // This approach is confusing, error-prone and not scalable.
 }
 
+int main() {}
+
 // Let's move on, and check out a (possibly) better implementation.

@@ -4,6 +4,7 @@
 // http://vittorioromeo.info | vittorio.romeo@outlook.com
 
 #include <utility>
+#include <string>
 #include <iostream>
 #include <tuple>
 #include <unordered_map>

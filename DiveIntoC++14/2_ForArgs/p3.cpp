@@ -128,7 +128,7 @@ int main()
     static_assert(std::is_same<decltype(v2), std::vector<std::string>>(), "");
 
     // Prints "hello world".
-    for(const auto& x : v2) std::cout << x;
+    for(const auto& x : v2) std::cout << x.c_str();
     std::cout << "\n";
 
     return 0;
